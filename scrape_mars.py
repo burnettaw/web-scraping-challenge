@@ -2,7 +2,6 @@
 # coding: utf-8
 
 import pandas as pd
-import pprint
 
 from splinter import Browser
 from bs4 import BeautifulSoup
