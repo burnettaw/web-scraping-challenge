@@ -9,7 +9,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 def scrape_info():
      # Setup splinter
     executable_path = {'executable_path': ChromeDriverManager().install()}
-    browser = Browser('chrome', **executable_path, headless=False)
+    browser = Browser('chrome', **executable_path, headless=True)
 
 
     mars = {}
@@ -70,7 +70,7 @@ def scrape_info():
         element = soup.find("a", text = "Sample").get("href")
         hemispheres = {}
         hemispheres["img_url"] = url+element
-        hemispheres["title"] = title
+        # hemispheres["title"] = title
         hemisphere_image_urls.append(hemispheres)
         browser.back()
 

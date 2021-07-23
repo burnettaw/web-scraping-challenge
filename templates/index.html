@@ -7,21 +7,66 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Exploring Mars </title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="static/style.css" -->
 </head>
 
 <body>
   <div class="container-fluid">
     <div class="jumbotron text-center">
-      <h1>Visit the Mars Exploration</h1>
-      <p>All you can see mars</p>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+      <h1>Mission to Mars Exploration</h1>
+      <p>All you can see facts about mars.</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape new data!</a></p>
     </div>
-    <img src="https://marshemispheres.com/images/full.jpg" alt="mars">
-    <h2>The typical mars:</h2>
-    <h3>Headlines: {{ mars.newstitle }}</h3>
-    <h3>Details: {{ mars.paragraph}}</h3>
+
+    <!--img style="height:200px; width:200px", src="https://marshemispheres.com/images/full.jpg" alt="mars" -->
+    
+   
+    
+    
+    
+    
+    <div class="row">
+      <div class="col-md-12">
+        <div class="headlines"><h2>Latest Mars News:</h2></div>
+        <div> class="panel-title"><h3>{{ mars.newstitle }}</h3></div>
+        <div id="details" class="panel-body">
+          <p>{{mars.paragraph}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6"> 
+        <div class="featured_image"></div>   
+      </div>
+      <div class="col-md-6"> 
+        <div class="featured_fact">
+          <h3>Details:{{mars.facts}}</h3>
+    
+        </div>   
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="sub-section"><h2>Mars Hemispheres</h2></div>
+      </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div id="hem1">
+          <h3> {{ mars.hemispheres}}</h3>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div id="hem2"></div>
+      </div>
+      <div class="col-md-3">
+        <div id="hem1"></div>
+      </div>
+      <div class="col-md-3">
+        <div id="hem2"></div>
+      </div>
+    </div>
   </div>
-  </div>
+   
 </body>
 
 </html>
