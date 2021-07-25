@@ -14,56 +14,47 @@
   <div class="container-fluid">
     <div class="jumbotron text-center">
       <h1>Mission to Mars Exploration</h1>
-      <p>All you can see facts about mars.</p>
+      <p>All you need to know about mars news.</p>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape new data!</a></p>
     </div>
-
-    <!--img style="height:200px; width:200px", src="https://marshemispheres.com/images/full.jpg" alt="mars" -->
-    
-   
-    
-    
-    
-    
     <div class="row">
       <div class="col-md-12">
         <div class="headlines"><h2>Latest Mars News:</h2></div>
-        <div> class="panel-title"><h3>{{ mars.newstitle }}</h3></div>
+        <div class="panel-title"><h4>{{ mars.newstitle }}</h4></div>
         <div id="details" class="panel-body">
           <p>{{mars.paragraph}}</p>
         </div>
       </div>
     </div>
     <div class="row">
+    <div><h2>Featured Mars Image</h2></div>
       <div class="col-md-6"> 
-        <div class="featured_image"></div>   
-      </div>
+        <div class="featured_image">
+         <img src="{{mars.featured_image_url}}">
+        </div>   
+      </div> 
+     
       <div class="col-md-6"> 
         <div class="featured_fact">
-          <h3>Details:{{mars.facts}}</h3>
+          <h3>Mars Facts:{{ mars.facts | safe}}</h3>
     
         </div>   
       </div>
     </div>
     <div class="row">
+     
       <div class="col-md-12">
         <div class="sub-section"><h2>Mars Hemispheres</h2></div>
       </div>
     <div class="row">
+      {% 
+        
+        for   hemisphere in mars.hemispheres %}
       <div class="col-md-3">
-        <div id="hem1">
-          <h3> {{ mars.hemispheres}}</h3>
-        </div>
+        <div > <img src="{{ hemisphere.img_url | safe }}"></div>
+        <div > <h3>{{ hemisphere.title | safe }}</h3></div>
       </div>
-      <div class="col-md-3">
-        <div id="hem2"></div>
-      </div>
-      <div class="col-md-3">
-        <div id="hem1"></div>
-      </div>
-      <div class="col-md-3">
-        <div id="hem2"></div>
-      </div>
+      {% endfor %}
     </div>
   </div>
    

@@ -70,7 +70,7 @@ def scrape_info():
         element = soup.find("a", text = "Sample").get("href")
         hemispheres = {}
         hemispheres["img_url"] = url+element
-        # hemispheres["title"] = title
+        hemispheres["title"] = title
         hemisphere_image_urls.append(hemispheres)
         browser.back()
 
